@@ -1,1 +1,60 @@
+{
+  "id": "Torrentio",
+  "name": "Torrentio for Seanime",
+  "version": "1.0.0",
+  "semverConstraint": ">=3.0.2",
+  "manifestURI": "https://raw.githubusercontent.com/DefnoJae/seanime-Provider-3/main/manifest.json",
+  "language": "typescript",
+  "type": "anime-torrent-provider",
+  "description": "Loads Torrentio torrent results in Seanime using both Kitsu and IMDb identifiers.",
+  "author": "DefnoJae",
+  "icon": "https://raw.githubusercontent.com/DefnoJae/seanime-Provider-3/main/icon.svg",
+  "website": "https://github.com/DefnoJae/seanime-Provider-3",
+  "readme": "https://raw.githubusercontent.com/DefnoJae/seanime-Provider-3/main/README.md",
+  "lang": "multi",
+  "payloadURI": "https://raw.githubusercontent.com/DefnoJae/seanime-Provider-3/main/torrentio.ts",
+  "userConfig": {
+    "version": 1,
+    "requiresConfig": false,
+    "fields": [
+      {
+        "type": "select",
+        "name": "torrentioSort",
+        "label": "Sort results",
+        "default": "quality",
+        "options": [
+          { "value": "quality", "label": "Quality, then seeders" },
+          { "value": "qualitysize", "label": "Quality, then size" },
+          { "value": "seeders", "label": "Seeders" },
+          { "value": "size", "label": "Size" }
+        ]
+      },
+      { "type": "text", "name": "torrentioLimit", "label": "Maximum results (blank for Torrentio default)" },
+      { "type": "text", "name": "torrentioLanguage", "label": "Priority languages (comma-separated Torrentio keys)" },
+      { "type": "text", "name": "torrentioQualityfilter", "label": "Excluded qualities (comma-separated, e.g. cam,scr,unknown)" },
+      { "type": "text", "name": "torrentioSizefilter", "label": "Video size limit (e.g. 10GB,2GB)" },
+      { "type": "text", "name": "torrentioProviders", "label": "Providers (comma-separated; blank enables all)" },
+      {
+        "type": "select",
+        "name": "torrentioDebrid",
+        "label": "Debrid provider",
+        "default": "none",
+        "options": [
+          { "value": "none", "label": "None" },
+          { "value": "realdebrid", "label": "Real-Debrid" },
+          { "value": "premiumize", "label": "Premiumize" },
+          { "value": "alldebrid", "label": "AllDebrid" },
+          { "value": "debridlink", "label": "Debrid-Link" },
+          { "value": "easydebrid", "label": "EasyDebrid" },
+          { "value": "offcloud", "label": "Offcloud" },
+          { "value": "torbox", "label": "TorBox" },
+          { "value": "putio", "label": "Put.io" }
+        ]
+      },
+      { "type": "text", "name": "torrentioDebridKey", "label": "Debrid API key (Put.io: clientId@token)" },
+      { "type": "text", "name": "torrentioTmdbApiKey", "label": "Optional TMDB API key for title fallback" }
+    ]
+  }
+}
+
 
